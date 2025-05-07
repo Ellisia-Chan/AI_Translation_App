@@ -365,6 +365,11 @@ class AITranslatorApp:
                 self.root.after(0, lambda: self.status_var.set("Audio playback failed"))
                 
         threading.Thread(target=speak_thread, daemon=True).start()
+        
+def main():
+    root = tk.Tk()
+    app = AITranslatorApp(root)
+    root.mainloop()
 
 if __name__ == "__main__":
     root = tk.Tk()

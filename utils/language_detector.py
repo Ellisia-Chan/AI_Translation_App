@@ -65,7 +65,8 @@ class LanguageDetector:
             if lang_code.startswith('zh'):
                 lang_code = self.chinese_map.get(lang_code, 'zh-cn')
                 
-            lang_name = self.language_names.get(lang_code, 'Unknown')
+            # Default to English if language is unknown
+            lang_name = self.language_names.get(lang_code, 'English')
             
             return {
                 'code': lang_code,
