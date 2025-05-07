@@ -4,6 +4,9 @@ import logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+# This class provides translation service using Google Translate.
+# It uses the googletrans library to handle the translation.
+# googletrans is a AI language translation library that uses Google Translate API.
 class TranslationService:
     def __init__(self):
         self.translator = Translator()

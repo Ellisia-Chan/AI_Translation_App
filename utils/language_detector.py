@@ -4,6 +4,11 @@ import logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+# LanguageDetector class is used to detect the language of a given text.
+# It uses langdetect library which is a port of Google's language detection library.
+# The class provides a single method `detect_language` which takes a text as input
+# and returns a dictionary with the detected language code and name.
+# If the detection fails, it returns None.
 class LanguageDetector:
     def __init__(self):
         # ISO 639-1 language codes and names
@@ -34,6 +39,11 @@ class LanguageDetector:
             'zh-tw': 'zh-tw'
         }
     
+        # Maps a language code to its ISO 639-1 code and name.
+        # For example, if the input language code is 'zh', it will be mapped
+        # to 'zh-cn' and the name will be 'Chinese (Simplified)'.
+        # If the input language code is not found in the mapping, it will
+        # return the original language code and name.
     def detect_language(self, text):
         """
         Detect language of provided text
