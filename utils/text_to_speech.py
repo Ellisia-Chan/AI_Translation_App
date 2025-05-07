@@ -10,13 +10,15 @@ import threading
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+# The TextToSpeech class handles text-to-speech conversion using gTTS and plays the audio using pygame.
+# It manages temporary audio files and provides functionality to stop currently playing audio.
 class TextToSpeech:
     def __init__(self):
         # Initialize pygame mixer for audio playback
         pygame.mixer.init()
         self.is_playing = False
         self.temp_files = []
-        
+    
     def __del__(self):
         # Clean up temporary files when object is destroyed
         self.cleanup_temp_files()
